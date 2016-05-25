@@ -4,4 +4,6 @@ class GroupEvent < ActiveRecord::Base
   validates :end_date, presence: true
 
   belongs_to :user
+
+  acts_as_paranoid
 end

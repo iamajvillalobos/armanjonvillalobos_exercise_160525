@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525062002) do
+ActiveRecord::Schema.define(version: 20160525091706) do
 
   create_table "group_events", force: true do |t|
     t.string   "name"
@@ -23,7 +23,10 @@ ActiveRecord::Schema.define(version: 20160525062002) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
   end
+
+  add_index "group_events", ["deleted_at"], name: "index_group_events_on_deleted_at"
 
   create_table "users", force: true do |t|
     t.string   "name"
